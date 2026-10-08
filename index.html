@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Kritika! ✨</title>
+  
+  <!-- Google Fonts & Canvas Confetti -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --bg-color: #fdf8f5;
+      --card-bg: #ffffff;
+      --accent-pink: #f4acb7;
+      --accent-rose: #d8e2dc;
+      --text-dark: #2b2d42;
+      --text-muted: #6c757d;
+      --primary-btn: #ee6c4d;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Floating background shapes */
+    .bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: -1;
+    }
+    .shape-1 {
+      width: 250px;
+      height: 250px;
+      background: #ffe5ec;
+      top: -50px;
+      left: -50px;
+    }
+    .shape-2 {
+      width: 300px;
+      height: 300px;
+      background: #f0efeb;
+      bottom: -50px;
+      right: -50px;
+    }
+
+    /* Main Container */
+    .card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fae1dd;
+      color: #9d8189;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      color: #2b2d42;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    h1 span {
+      color: #e07a5f;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    /* Photo Frame / Decorative Area */
+    .photo-frame {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f4acb7, #ffe5ec);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      box-shadow: 0 8px 20px rgba(244, 172, 183, 0.4);
+      position: relative;
+    }
+
+    .photo-frame::after {
+      content: '✨';
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Message Area */
+    .message {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: #fdf8f5;
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      border: 1px dashed #f4acb7;
+    }
+
+    /* Interactive Button */
+    .btn {
+      background: var(--text-dark);
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(43, 45, 66, 0.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(43, 45, 66, 0.3);
+      background: #3d405b;
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    /* Hidden Surprise Wish */
+    .surprise {
+      display: none;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #e07a5f;
+      font-weight: 600;
+      animation: popIn 0.5s ease-out forwards;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <main class="card">
+    <span class="badge">Special Day</span>
+    <h1>Happy Birthday, <span>Kritika</span>!</h1>
+    <p class="subtitle">Wishing you the absolute best day ever 🎉</p>
+
+    <div class="photo-frame">
+      🌸
+    </div>
+
+    <div class="message">
+      To an amazing friend who brings so much light and joy into every room. May your year ahead be filled with laughter, new adventures, and everything you’ve been hoping for!
+    </div>
+
+    <button class="btn" onclick="celebrate()">Pop The Confetti! ✨</button>
+
+    <div id="surprise" class="surprise">
+      💖 Here's to making more incredible memories together!
+    </div>
+  </main>
+
+  <script>
+    // Trigger celebratory confetti on page load
+    window.addEventListener('load', () => {
+      fireConfetti();
+    });
+
+    function fireConfetti() {
+      // Gentle side cannons
+      confetti({
+        particleCount: 60,
+        spread: 70,
+        origin: { y: 0.7 },
+        colors: ['#f4acb7', '#9d8189', '#ffe5ec', '#e07a5f']
+      });
+    }
+
+    function celebrate() {
+      // Big celebratory burst on button click
+      var count = 200;
+      var defaults = {
+        origin: { y: 0.7 },
+        colors: ['#f4acb7', '#9d8189', '#f0efeb', '#ee6c4d', '#f2cc8f']
+      };
+
+      function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(count * particleRatio)
+        }));
+      }
+
+      fire(0.25, { spread: 26, startVelocity: 55 });
+      fire(0.2, { spread: 60 });
+      fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+      fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+      fire(0.1, { spread: 120, startVelocity: 45 });
+
+      // Show extra message
+      document.getElementById('surprise').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
